@@ -1,0 +1,303 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+  font-family: $font_name;
+  font-display: swap;
+  src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+  font-weight: #{$weight};
+  font-style: #{$style};
+  }
+}
+@import "fonts";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito+Sans&display=swap');
+
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Nunito Sans';
+}
+div {
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  // height: 100vh;
+  // max-width: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+  border: none;
+}
+li {
+ list-style-type: none;
+ * {
+   color:  inherit;
+ }
+}
+h1, h2, h3, h4 {
+  font-family: Montserrat;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: #1d1d1d;
+}
+p {
+  font-family: 'Nunito Sans';
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  color: #787878;
+}
+///////
+.container {
+  padding: 0 5%;
+  width: 100vw;
+  height: 100%;
+}
+/* ===== NAVIGATION =======*/
+.nav__container {
+  position: relative;
+
+  display: flex;
+  justify-content:flex-end;
+  align-items: center;
+  height: 8vh;
+  .logo {
+    position:  absolute;
+    left: 0;
+  }
+  .nav__link {
+    font-family: Montserrat;
+    font-size: 12px;
+    line-height: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #191919;
+    margin: 0 0 0 2%;
+  }
+  .nav__link__selected {
+    color: #10c9c3;
+  }
+}
+/* ===== MAIN =======*/
+main {
+  position: relative;
+  height: 80vh;
+
+  }
+  .main__container {
+    height: 80vh;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    header {
+      max-width: 500px;
+      margin: 0 0 8vh 0;
+
+      h1 {
+        font-family: Montserrat;
+        font-size: 38px;
+        line-height: 88px;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        color: #1d1d1d;
+      }
+      p {
+        color: #191919;
+
+      }
+      button {
+        margin: 4% 0 0 0;
+        height: 5vh;
+        width: 100%;
+        max-width: 35%;
+        background-color: #10c9c3;
+        border-radius: 4px;
+        ///
+        font-family: Montserrat;
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #ffffff;
+      }
+    }
+    video {
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -100;
+    }
+
+    }
+  // }
+.about {
+  height: auto;
+  padding: 8% 20%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  .about__item {
+    line-height: 88px;
+    font-size: 30px;
+    h2 {
+
+      color: #191919;
+    }
+    img {
+      margin-top: 3%;
+    }
+  }
+}
+.profile {
+  // width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  flex-wrap: wrap;
+
+  padding: 0  0 0 5%;
+  @media (max-width: 700px) {
+    flex-direction: column;
+    padding: 0 5%;
+  }
+  .statistics {
+    flex-basis:45%;
+    @media (max-width: 700px) {
+      width: 100%;
+    }
+    h2 {
+      font-size: 30px;
+
+    }
+    h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #000000;
+    }
+    .statistics_item {
+      width: 100%;
+      margin: 4% 0 0 0;
+
+      progress {
+        border: none;
+        width: 100%;
+        height: 6px;
+      }
+
+      progress::-webkit-progress-bar {
+        background-color: #d8d8d8;
+      }
+      progress::-webkit-progress-value {
+        background: #10c9c3;
+      }
+
+      progress::-moz-progress-bar {
+        background: #10c9c3;
+      }
+    }
+  }
+  img {
+    width: 100%;
+    flex-basis:50%;
+    max-width: 50%;
+    @media (max-width: 700px) {
+      max-width: 100%;
+    }
+  }
+}
+.numbers {
+  height: 30vh;
+  width: 100%;
+  background-color: #10c9c3;
+
+  .numbers__content {
+    color: inherit;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .numbers__item > * {
+      color: #fff ;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== FOOTER =======*/
+footer {
+  width: 100%;
+  height: 25vh;
+  background: #141414;
+  color: #bcbcbc;
+}
+.footer__container {
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  h3 {
+    font-size: 18px;
+    line-height: 40px;
+    font-weight: 500;
+    color: #ffffff;
+  }
+  .footer__item {
+    max-width: 20%;
+
+  }
+}
