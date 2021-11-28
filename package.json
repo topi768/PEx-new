@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "сброка gulp",
   "main": "index.html",
+  "homepage": "https://topi768.github.io/PEx-new/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,6 +13,7 @@
     "browser": "^0.2.6",
     "browser-sync": "^2.27.5",
     "del": "^6.0.0",
+    "gh-pages": "^3.2.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
@@ -31,5 +33,6 @@
     "sass": "^1.43.4",
     "sync": "^0.2.5",
     "webp-converter": "^2.2.3"
-  }
+  },
+  "dependencies": {}
 }
