@@ -175,6 +175,18 @@ function video() {
     .pipe(gulp.dest('dist/video'));
 }
 
+function iconsfonts() {
+    // return gulp.src([source_folder + '/iconsfonts /iconsfonts.css'])
+    // .pipe(gulp.dest('dist/iconsfonts.css'));
+
+    // return gulp.src([source_folder + '/iconsfonts/**/*'])
+    // .pipe(gulp.dest('dist/iconsfonts'));
+    // return gulp.src([source_folder + '/fontawesome/**/*'])
+    // .pipe(gulp.dest('dist/fontawesome'));
+    return gulp.src([source_folder + '/webfonts/**'])
+    .pipe(gulp.dest('dist/webfonts'));
+}
+
 /// нужно ручками прописыват задачу
 
 function fontsStyle() {
@@ -214,11 +226,12 @@ function cb() {}
     return del(path.clean);
   }
 
-let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts, video),fontsStyle);
+let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts, video, iconsfonts),fontsStyle);
 // let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts));
 
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
+exports.iconsfonts = iconsfonts;
 exports.video = video;
 exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
