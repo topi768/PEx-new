@@ -16,7 +16,7 @@
  margin: 0;
  padding: 0;
  box-sizing: border-box;
- font-family: 'Nunito Sans';
+ font-family: 'Nunito Sans' ;
 }
 div {
   margin: 0;
@@ -43,12 +43,20 @@ li {
    color:  inherit;
  }
 }
-h1, h2, h3, h4 {
+
+@mixin h {
   font-family: Montserrat;
   font-weight: 500;
   letter-spacing: 0.01em;
   color: #1d1d1d;
 }
+
+//  h1, h2, h3, h4, h5, h6 {
+//   font-family: Montserrat;
+//   font-weight: 500;
+//   letter-spacing: 0.01em;
+//   color: #1d1d1d;
+// }
 p {
   font-family: 'Nunito Sans';
   font-size: 18px;
@@ -224,6 +232,7 @@ main {
   height: 30vh;
   width: 100%;
   background-color: #10c9c3;
+  color: #ffffff;
 
   .numbers__content {
     color: inherit;
@@ -236,14 +245,14 @@ main {
       justify-content: space-around;
     }
     .numbers__item {
-      .fa:before {
-      
+      .fa::before {
+
       }
     }
-    .numbers__item > * {
-      color: #fff ;
-
-    }
+    // .numbers__item > * {
+    //   color: #fff ;
+    //
+    // }
   }
 }
 

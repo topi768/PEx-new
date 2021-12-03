@@ -7099,16 +7099,6 @@ li * {
   color: inherit;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: Montserrat;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  color: #1d1d1d;
-}
-
 p {
   font-family: "Nunito Sans";
   font-size: 18px;
@@ -7306,6 +7296,7 @@ main {
   height: 30vh;
   width: 100%;
   background-color: #10c9c3;
+  color: #ffffff;
 }
 
 .numbers .numbers__content {
@@ -7320,10 +7311,6 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.numbers .numbers__content .numbers__item > * {
-  color: #fff;
 }
 
 /* ===== FOOTER =======*/
