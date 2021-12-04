@@ -7099,17 +7099,8 @@ li * {
   color: inherit;
 }
 
-p {
-  font-family: "Nunito Sans";
-  font-size: 18px;
-  line-height: 28px;
-  font-weight: 400;
-  letter-spacing: 0.005em;
-  color: #787878;
-}
-
 .container {
-  padding: 0 5%;
+  padding: 0 7.5%;
   width: 100%;
   height: 100%;
 }
@@ -7177,14 +7168,20 @@ main {
 
 .main__container header h1 {
   font-family: Montserrat;
-  font-size: 38px;
-  line-height: 88px;
   font-weight: 500;
   letter-spacing: 0.01em;
   color: #1d1d1d;
+  font-size: 38px;
+  line-height: 88px;
 }
 
 .main__container header p {
+  font-family: "Nunito Sans";
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  color: #787878;
   color: #191919;
 }
 
@@ -7232,7 +7229,20 @@ main {
 }
 
 .about .about__item h2 {
+  font-family: Montserrat;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: #1d1d1d;
   color: #191919;
+}
+
+.about .about__item p {
+  font-family: "Nunito Sans";
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  color: #787878;
 }
 
 .about .about__item img {
@@ -7254,10 +7264,18 @@ main {
 }
 
 .profile .statistics h2 {
+  font-family: Montserrat;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: #1d1d1d;
   font-size: 30px;
 }
 
 .profile .statistics h3 {
+  font-family: Montserrat;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: #1d1d1d;
   font-size: 14px;
   text-transform: uppercase;
   color: #000000;
@@ -7293,24 +7311,42 @@ main {
 }
 
 .numbers {
-  height: 30vh;
+  height: auto;
+  min-height: 30vh;
   width: 100%;
   background-color: #10c9c3;
   color: #ffffff;
 }
 
 .numbers .numbers__content {
-  color: inherit;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  width: inherit;
+  height: auto;
+  min-height: 30vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: clamp(1rem, 2vw, 24px);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.numbers .numbers__content .numbers__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 5% min(1vw, 5%);
+}
+
+.numbers .numbers__content .numbers__text {
+  margin: 0 0 0 10%;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.numbers .numbers__content .numbers__text p {
+  position: absolute;
+  bottom: 0;
+  white-space: nowrap;
 }
 
 /* ===== FOOTER =======*/
@@ -7365,15 +7401,6 @@ footer {
   .profile img {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
-  }
-}
-
-@media (max-width: 600px) {
-  .numbers .numbers__content {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
   }
 }
 

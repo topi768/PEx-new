@@ -50,14 +50,7 @@ li {
   letter-spacing: 0.01em;
   color: #1d1d1d;
 }
-
-//  h1, h2, h3, h4, h5, h6 {
-//   font-family: Montserrat;
-//   font-weight: 500;
-//   letter-spacing: 0.01em;
-//   color: #1d1d1d;
-// }
-p {
+@mixin p {
   font-family: 'Nunito Sans';
   font-size: 18px;
   line-height: 28px;
@@ -65,9 +58,23 @@ p {
   letter-spacing: 0.005em;
   color: #787878;
 }
+//  h1, h2, h3, h4, h5, h6 {
+//   font-family: Montserrat;
+//   font-weight: 500;
+//   letter-spacing: 0.01em;
+//   color: #1d1d1d;
+// }
+// p {
+//   font-family: 'Nunito Sans';
+//   font-size: 18px;
+//   line-height: 28px;
+//   font-weight: 400;
+//   letter-spacing: 0.005em;
+//   color: #787878;
+// }
 ///////
 .container {
-  padding: 0 5%;
+  padding: 0 7.5%;
   width: 100%;
   height: 100%;
 }
@@ -114,15 +121,14 @@ main {
       max-width: 500px;
       margin: 0 0 8vh 0;
 
+
       h1 {
-        font-family: Montserrat;
+        @include h;
         font-size: 38px;
         line-height: 88px;
-        font-weight: 500;
-        letter-spacing: 0.01em;
-        color: #1d1d1d;
       }
       p {
+        @include p;
         color: #191919;
 
       }
@@ -165,8 +171,11 @@ main {
     line-height: 88px;
     font-size: 30px;
     h2 {
-
+      @include h;
       color: #191919;
+    }
+    p {
+      @include p;
     }
     img {
       margin-top: 3%;
@@ -192,10 +201,12 @@ main {
       width: 100%;
     }
     h2 {
+      @include h;
       font-size: 30px;
 
     }
     h3 {
+      @include h;
       font-size: 14px;
       text-transform: uppercase;
       color: #000000;
@@ -229,30 +240,47 @@ main {
   }
 }
 .numbers {
-  height: 30vh;
+  height: auto;
+  min-height: 30vh;
   width: 100%;
   background-color: #10c9c3;
   color: #ffffff;
 
   .numbers__content {
-    color: inherit;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
+    width: inherit;
+    height: auto;
+    min-height: 30vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: clamp(1rem, 2vw, 24px);
     align-items: center;
-    @media (max-width: 600px) {
-      flex-wrap: wrap;
-      justify-content: space-around;
-    }
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
+    // flex-wrap: wrap;
+    // padding: inherit;
+    // @media (max-width: 600px) {
+    //   flex-wrap: wrap;
+    //   justify-content: space-around;
+    // }
     .numbers__item {
+      display: flex;
+      margin: 5% min(1vw, 5%);
       .fa::before {
-
+        // margin: 0 5% 0 0;
       }
     }
-    // .numbers__item > * {
-    //   color: #fff ;
-    //
-    // }
+    .numbers__text {
+      margin: 0 0 0 10%;
+      position: relative;
+      // float: right;
+      text-transform: uppercase;
+      p {
+        position: absolute;
+        bottom: 0;
+        white-space: nowrap;
+      }
+    }
   }
 }
 
