@@ -7099,6 +7099,18 @@ li * {
   color: inherit;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Montserrat;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: #1d1d1d;
+}
+
 .container {
   padding: 0 7.5%;
   width: 100%;
@@ -7128,7 +7140,7 @@ li * {
 
 .nav__container .nav__link {
   font-family: Montserrat;
-  font-size: 12px;
+  font-size: calc(7.2px + 4.8 * ((100vw - 320px) / 1030));
   line-height: 24px;
   font-weight: 500;
   text-transform: uppercase;
@@ -7167,37 +7179,34 @@ main {
 }
 
 .main__container header h1 {
-  font-family: Montserrat;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  color: #1d1d1d;
-  font-size: 38px;
-  line-height: 88px;
+  line-height: 48px;
+  font-size: calc(18px + 12 * ((100vw - 320px) / 1030));
 }
 
 .main__container header p {
   font-family: "Nunito Sans";
-  font-size: 18px;
+  font-size: clamp(1rem, 18px, 1.33vw);
   line-height: 28px;
   font-weight: 400;
   letter-spacing: 0.005em;
   color: #787878;
+  margin: 3% 0;
   color: #191919;
 }
 
 .main__container header button {
-  margin: 4% 0 0 0;
+  color: #fff;
   height: 5vh;
   width: 100%;
   max-width: 35%;
   background-color: #10c9c3;
   border-radius: 4px;
-  font-family: Montserrat;
-  font-size: 12px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #ffffff;
+  font-family: "Nunito Sans";
+  font-size: clamp(1rem, 18px, 1.33vw);
+  line-height: 28px;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  color: #787878;
 }
 
 .main__container video {
@@ -7225,20 +7234,15 @@ main {
 
 .about .about__item {
   line-height: 88px;
-  font-size: 30px;
 }
 
 .about .about__item h2 {
-  font-family: Montserrat;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  color: #1d1d1d;
   color: #191919;
 }
 
 .about .about__item p {
   font-family: "Nunito Sans";
-  font-size: 18px;
+  font-size: clamp(1rem, 18px, 1.33vw);
   line-height: 28px;
   font-weight: 400;
   letter-spacing: 0.005em;
@@ -7263,20 +7267,16 @@ main {
   padding: 0 0 0 5%;
 }
 
+.profile .statistics {
+  background: #f8f9f9;
+}
+
 .profile .statistics h2 {
-  font-family: Montserrat;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  color: #1d1d1d;
-  font-size: 30px;
+  font-size: calc(18px + 12 * ((100vw - 320px) / 1030));
 }
 
 .profile .statistics h3 {
-  font-family: Montserrat;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  color: #1d1d1d;
-  font-size: 14px;
+  font-size: calc(8.4px + 5.6 * ((100vw - 320px) / 1030));
   text-transform: uppercase;
   color: #000000;
 }
@@ -7360,7 +7360,7 @@ footer {
 
 .footer__container {
   width: 100%;
-  height: 25vh;
+  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7379,6 +7379,17 @@ footer {
   line-height: 40px;
   font-weight: 500;
   color: #ffffff;
+}
+
+.footer__container p,
+.footer__container a {
+  font-family: "Nunito Sans";
+  font-size: clamp(1rem, 18px, 1.33vw);
+  line-height: 28px;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  color: #787878;
+  color: #bcbcbc;
 }
 
 .footer__container .footer__item {
