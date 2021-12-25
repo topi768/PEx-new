@@ -25,13 +25,11 @@ div {
 html, body {
   // height: 100vh;
   max-width: 100%;
-
   // overflow-x: hidden;
-
 }
-
 a {
   text-decoration: none;
+  display: inline-block;
 }
 button {
   cursor: pointer;
@@ -43,306 +41,78 @@ li {
    color:  inherit;
  }
 }
-
+//
+h1, h2, h3, h4, h5, h6, p {
+  font-family: Mulish;
+}
 //
 $maxWidth: 1350;
-
 @mixin adaptiv-font($pcSize) {
  $mobSize: 0.6 * $pcSize;
  $addSize: $pcSize - $mobSize;
  $maxWidth: $maxWidth - 320;
  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
 }
-@mixin h {
-  font-family: Montserrat;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  color: #1d1d1d;
-
-}
-@mixin p {
-  font-family: 'Nunito Sans';
-  font-size: clamp(1rem, 18px ,1.33vw);
-  line-height: 28px;
-  font-weight: 400;
-  letter-spacing: 0.005em;
-  color: #787878;
-}
-// colors
-$blue: #10c9c3;
-$grey: #e9e9e9;
-$white-white-grey: #f8f9f9;
-$white-grey: #dddddd;
-$dark-grey: #838383;
-$dark: #141414;
 //
- h1, h2, h3, h4, h5, h6 {
-   @include h;
- }
-///////
+$blue: #4276d7;
+$black: #373F41;
+//
 .container {
-  padding: 0 7.5%;
-  width: 100%;
   height: 100%;
+  padding: 0 13%;
 }
-/* ===== NAVIGATION =======*/
-.nav__container {
-  position: relative;
-
+.logo {
+  font-style: italic;
+  left: 0px;
+  font-family: Lato;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+  color: $blue;
+  @include adaptiv-font(21);
+}
+.button {
+  width: 83px;
+  height: 42px;
+  background: $blue;
+  border-radius: 5px;
+  color: #fff;
+}
+nav {
   display: flex;
-  justify-content:flex-end;
   align-items: center;
-  height: 8vh;
+  justify-content: center;
+  position: relative;
+  height: 5vw;
   .logo {
-    position:  absolute;
+    position: absolute;
     left: 0;
   }
-  .nav__link {
-    font-family: Montserrat;
-    @include adaptiv-font(12);
-    line-height: 24px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #191919;
-    margin: 0 0 0 2%;
+  .nav__item {
+    margin: 0 2%;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    color: $black;
+    @include adaptiv-font(16);
+    transition: 0.5s;
+    &:hover {
+      color: $blue;
+    }
   }
-  .nav__link__selected {
+  .nav__item__hover {
     color: $blue;
   }
+  .nav__button {
+    position: absolute;
+    right: 0;
+    height: max(60%, 35px);
+    color: #fff !important;
+  }
 }
-/* ===== MAIN =======*/
 main {
-  position: relative;
-  height: 80vh;
-  }
-  .main__container {
-    height: 80vh;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    header {
-      max-width: 500px;
-      margin: 0 0 8vh 0;
+  width: 100vw;
+  height: 90vh;
+  background: url('/img/main/pexels-nothing-ahead-3729557.jpg') no-repeat;
+  background-size: cover;
+  position: fixed;
 
-
-      h1 {
-        line-height: 48px;
-        @include adaptiv-font(30);
-         ;
-      }
-      p {
-        @include p;
-        margin: 3% 0;
-        color: #191919;
-      }
-      button {
-        color: #fff;
-        height: 5vh;
-        width: 100%;
-        max-width: 35%;
-        background-color: $blue;
-        border-radius: 4px;
-        @include p;
-      }
-    }
-    video {
-
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -100;
-    }
-
-    }
-  // }
-.about {
-  height: auto;
-  padding: 8% 20%;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  .about__item {
-    line-height: 88px;
-    h2 {
-      ;
-      color: #191919;
-    }
-    p {
-      @include p;
-    }
-    img {
-      margin-top: 3%;
-    }
-  }
-}
-.profile {
-  display: flex;
-  flex-direction: row;
-  align-items:center;
-  padding: 0  0 0 5%;
-  @media (max-width: 700px) {
-    flex-direction: column;
-    padding: 0 5%;
-  }
-  .statistics {
-    background: $white-white-grey;
-    @media (max-width: 700px) {
-      width: 100%;
-    }
-    h2 {
-
-      @include adaptiv-font(30);
-
-    }
-    h3 {
-       ;
-      @include adaptiv-font(14);
-      text-transform: uppercase;
-      color: #000000;
-    }
-    .statistics_item {
-      width: 100%;
-      margin: 4% 0 0 0;
-      progress {
-        border: none;
-        width: 100%;
-        height: 6px;
-      }
-      progress::-webkit-progress-bar {
-        background-color: #d8d8d8;
-      }
-      progress:-webkit-progress-value {
-        background: #10c9c3;
-      }
-      progress:-moz-progress-bar {
-        background: #10c9c3;
-      }
-    }
-  }
-  img {
-    width: 100%;
-    flex-basis:50%;
-    // max-width: 50%;
-    @media (max-width: 700px) {
-      flex-basis: 100%;
-    }
-  }
-}
-.numbers {
-  height: auto;
-  min-height: 30vh;
-  width: 100%;
-  background-color: $blue;
-  color: #ffffff;
-
-  .numbers__content {
-    width: inherit;
-    height: auto;
-    min-height: 30vh;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: clamp(1rem, 2vw, 24px);
-    align-items: center;
-    // display: flex;
-    // justify-content: space-between;
-    // align-items: center;
-    // flex-wrap: wrap;
-    // padding: inherit;
-    // @media (max-width: 600px) {
-    //   flex-wrap: wrap;
-    //   justify-content: space-around;
-    // }
-    .numbers__item {
-      display: flex;
-      margin: 5% min(1vw, 5%);
-      .fa::before {
-        // margin: 0 5% 0 0;
-      }
-    }
-    .numbers__text {
-      margin: 0 0 0 10%;
-      position: relative;
-      // float: right;
-      text-transform: uppercase;
-      p {
-        position: absolute;
-        bottom: 0;
-        white-space: nowrap;
-      }
-    }
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ===== FOOTER =======*/
-footer {
-  width: 100%;
-  height: 25vh;
-  background: $dark;
-  color: #bcbcbc;
-}
-.footer__container {
-  width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  h3 {
-    font-size: 18px;
-    line-height: 40px;
-    font-weight: 500;
-    color: #ffffff;
-  }
-  p, a {
-    @include p;
-    color: #bcbcbc;
-  }
-  .footer__item {
-    max-width: 20%;
-
-  }
 }
